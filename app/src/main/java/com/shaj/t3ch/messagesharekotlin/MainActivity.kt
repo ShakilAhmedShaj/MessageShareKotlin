@@ -19,10 +19,13 @@ class MainActivity : AppCompatActivity() {
 
             val message: String = et_message.text.toString()
 
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 
             val intent = Intent(this,SecondActivity::class.java)
+            intent.putExtra("message",message)
             startActivity(intent)
+
+
 
         }
 
