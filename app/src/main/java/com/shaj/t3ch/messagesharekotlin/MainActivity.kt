@@ -1,5 +1,6 @@
 package com.shaj.t3ch.messagesharekotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,16 +13,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        
 
-     btn_show_toast.setOnClickListener {
+        btn_next.setOnClickListener {
 
-         Log.i("MainActivity","Show Button Clicked!")
-         Toast.makeText(this,"Button Clicked",Toast.LENGTH_LONG).show()
+            val message: String = et_message.text.toString()
 
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 
+            val intent = Intent(this,SecondActivity::class.java)
+            startActivity(intent)
 
-     }
-
+        }
 
 
     }
